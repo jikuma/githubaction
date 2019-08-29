@@ -1,6 +1,6 @@
-name: 'Node 12 Template Action'
-description: 'Get started with Node actions'
-author: 'GitHub'
+name: 'GitHub actions'
+description: 'Github Action to interact with the github repository'
+author: 'jikuma'
 inputs:
   repo-token:
     description: 'The GITHUB_TOKEN secret'
