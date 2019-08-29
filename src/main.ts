@@ -14,7 +14,7 @@ async function run() {
     }
     else
     {
-      require(operationsMap[operation]).run(token)
+      await require(operationsMap[operation]).run(token)
     }
   } catch (error) {
     core.setFailed(error.message);
