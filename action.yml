@@ -11,7 +11,7 @@ inputs:
     required: true
   tag_name:
     description: 'tag name of the release'
-    default: '${GITHUB_SHA}'
+    default: '${ GITHUB_SHA }'
   release_title:
     description: 'title of the release'
   release_note:
