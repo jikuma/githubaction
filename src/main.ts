@@ -1,9 +1,21 @@
 import * as core from '@actions/core';
 
+let operationsMap = {
+  "create a release": "./createarelease",
+  "createarelease": "./createarelease"
+}
+
 async function run() {
   try {
-    const myInput = core.getInput('myInput');
-    core.debug(`Hello ${myInput}`);
+    const token = core.getInput('repo-token', {required: true});
+    const operation = core.getInput('operation', {required: true});
+    if (!(operation in operationsMap)) {
+      core.setFailed("Not a valid operation input, valid operations are 'create a release'");    
+    }
+    else
+    {
+      await require(operationsMap[operation]).run(token)
+    }
   } catch (error) {
     core.setFailed(error.message);
   }
