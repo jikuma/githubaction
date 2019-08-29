@@ -20,7 +20,7 @@ export async function run(token) {
     const release_asset_filepath = core.getInput('asset_filepath', {required: false});
     const release_target_commitish: string = process.env.GITHUB_SHA!;
     core.warning("Execution complete executing 5");
-    client.repos.createRelease({ owner: repoNameWithOwnerArray[0],
+    await client.repos.createRelease({ owner: repoNameWithOwnerArray[0],
         repo: repoNameWithOwnerArray[1],
         tag_name: tag_name,
         target_commitish: release_target_commitish,
@@ -51,6 +51,6 @@ export async function run(token) {
     }).catch((err) => {
         core.warning("Execution complete executing 9");
         core.setFailed(err.message);
-    })  
+    })
 }
 

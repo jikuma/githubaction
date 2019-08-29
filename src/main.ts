@@ -23,7 +23,7 @@ async function run() {
     core.setFailed(error.message);
   }
 
-  core.warning("Execution complete executing ");
+  core.warning("Execution complete executing -- end of everything");
 }
 
 run();
