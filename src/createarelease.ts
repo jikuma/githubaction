@@ -3,6 +3,7 @@ import * as github from '@actions/github';
 import fs = require('fs');
 import path = require("path");
 import mime = require('browserify-mime');
+var createError = require('http-errors')
 
 export async function run(token) {
     const client = new github.GitHub(token);
@@ -15,7 +16,7 @@ export async function run(token) {
     const release_prerelease = core.getInput('release_prerelease', {required: false});
     const release_asset_filepath = core.getInput('asset_filepath', {required: false});
     const release_target_commitish: string = process.env.GITHUB_SHA!;
-    client.repos.createRelease({ owner: repoNameWithOwnerArray[0],
+    await client.repos.createRelease({ owner: repoNameWithOwnerArray[0],
         repo: repoNameWithOwnerArray[1],
         tag_name: tag_name,
         target_commitish: release_target_commitish,
@@ -38,6 +39,12 @@ export async function run(token) {
             })
         }
     }).catch((err) => {
+
+        if(err.name == 'HttpError') {
+            core.setFailed("Call to github failed response code : " + err.status)
+            core.setFailed(err.response.body)
+        }
+
         core.setFailed(err.message);
     })  
 }
