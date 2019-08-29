@@ -38,12 +38,11 @@ export async function run(token) {
             })
         }
     }).catch((err) => {
-
         if(err.name == 'HttpError') {
             core.setFailed("Call to github failed response code : " + err.status)
-            core.setFailed(err.response.body)
         }
 
+        core.setFailed(JSON.stringify(err))
         core.setFailed(err.message);
     })  
 }
