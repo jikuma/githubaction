@@ -2,9 +2,16 @@ name: 'Node 12 Template Action'
 description: 'Get started with Node actions'
 author: 'GitHub'
 inputs:
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  repo-token:
+    description: 'The GITHUB_TOKEN secret'
+    required: true
+  operation:
+    description: "Define an operation you want to take, e.g 'create a release'"
+    default: 'create a release'
+    required: true
+  tag_name:
+    description: 'tag name of the release'
+    default: '${GITHUB_SHA}'
 runs:
   using: 'node12'
   main: 'lib/main.js'
