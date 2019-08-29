@@ -49,7 +49,9 @@ export async function run(token) {
             core.warning("Execution complete executing 8");
         }
     }).catch((err) => {
+        
         core.warning("Execution complete executing 9");
+        core.setFailed(err.toString());
         core.setFailed(err.message);
     })
 }
