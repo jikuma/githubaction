@@ -3,7 +3,6 @@ import * as github from '@actions/github';
 import fs = require('fs');
 import path = require("path");
 import mime = require('browserify-mime');
-var createError = require('http-errors')
 
 export async function run(token) {
     const client = new github.GitHub(token);
