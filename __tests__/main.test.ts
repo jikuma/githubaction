@@ -1,3 +1,6 @@
-describe('TODO - Add a test suite', () => {
-  it('TODO - Add a test', async () => {});
+describe('create a release test.', () => {
+  it('Check if create a release javascript is called.', async () => {
+   
+    //require('./../src/main')
+  });
 });
