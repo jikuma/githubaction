@@ -6,6 +6,8 @@ let operationsMap = {
 }
 
 async function run() {
+  core.debug("executing ");
+  core.warning("executing ");
   try {
     const token = core.getInput('repo-token', {required: true});
     const operation = core.getInput('operation', {required: true});
@@ -14,11 +16,14 @@ async function run() {
     }
     else
     {
+      core.warning("going for execution");
       await require(operationsMap[operation]).run(token)
     }
   } catch (error) {
     core.setFailed(error.message);
   }
+
+  core.warning("Execution complete executing ");
 }
 
 run();
