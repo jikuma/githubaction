@@ -9,7 +9,7 @@ async function run() {
   try {
     const token = core.getInput('repo-token', {required: true});
     const operation = core.getInput('operation', {required: true});
-    if (!("key" in operationsMap)) {
+    if (!(operation in operationsMap)) {
       core.setFailed("Not a valid operation input, valid operations are 'create a release'");    
     }
     else
