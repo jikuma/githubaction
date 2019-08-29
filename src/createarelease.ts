@@ -14,7 +14,7 @@ export async function run(token) {
     const release_draft = core.getInput('release_draft', {required: false});
     const release_prerelease = core.getInput('release_prerelease', {required: false});
     const release_asset_filepath = core.getInput('asset_filepath', {required: false});
-    const release_target_commitish = core.getInput('target_commit', {required: false});
+    const release_target_commitish: string = process.env.GITHUB_SHA!;
     client.repos.createRelease({ owner: repoNameWithOwnerArray[0],
         repo: repoNameWithOwnerArray[1],
         tag_name: tag_name,
