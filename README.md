@@ -10,7 +10,7 @@
         release_title: 'Release from Test'
         release_note: 'its a release node'
         asset_filepath: './CHANGELOG.md'
-        tag_name: 'Test'
+        tag_name: v0.1.GIHUB_SHORT_SHA
 ```
 
 
