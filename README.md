@@ -3,7 +3,7 @@
 ### create a release
 
 ```
-  - uses: jikuma/githubaction@v0.3.0-alpha
+  - uses: jikuma/githubaction@v0.3.3-alpha
       with:
         operation: 'create a release'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
