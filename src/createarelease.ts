@@ -9,7 +9,7 @@ export async function run(token) {
     const repoNameWithOwner : string = process.env.GITHUB_REPOSITORY as string;
     var repoNameWithOwnerArray = repoNameWithOwner.split("/", 2); 
     const tag_name = require('./temp_replacevariableininput').getInput('tag_name', {required: true});
-    core.warning("Tagname is")
+    core.debug("Tagname is "+ tag_name)
     const release_title = core.getInput('release_title', {required: false});
     const release_note = core.getInput('release_note', {required: false});
     const release_draft = core.getInput('release_draft', {required: false});
