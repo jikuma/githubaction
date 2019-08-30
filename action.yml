@@ -1,4 +1,4 @@
-name: 'GitHub actions'
+name: 'GitHub repository operation'
 description: 'Github Action to interact with the github repository'
 author: 'jikuma'
 inputs:
