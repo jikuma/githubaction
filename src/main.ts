@@ -2,7 +2,11 @@ import * as core from '@actions/core';
 
 let operationsMap = {
   "create a release": "./createarelease",
-  "createarelease": "./createarelease"
+  "createarelease": "./createarelease",
+  "uploadtorelease": "./uploadreleaseasset",
+  "uploadanassettoarelease": "./uploadreleaseasset",
+  "upload to release": "./uploadreleaseasset",
+  "upload an asset to a release": "./uploadreleaseasset",
 }
 
 async function run() {
